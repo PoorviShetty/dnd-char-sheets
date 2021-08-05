@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid view-main">
+    <div class="row d-flex justify-content-center py-5">
+      <h1 class="text-center text-white fw-bold">Edit Character</h1>
+      <div class="col-lg-9 py-5">
+        <div class="card">
+          <div class="card-body bg-light py-5">
+            <form method='POST'>
+                <div class="container">
+
+                  <!--Intro-->
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="name" name="name" value={{ char.name }}>
+                          <label for="name">Character Name</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="class_level" name="class_level" value={{ char.class_level }}>
+                          <label for="class_level">Class & Level</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="background" name="background" value={{ char.background }}>
+                          <label for="background">Background</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="player_name" name="player_name" value={{ char.player_name }}>
+                          <label for="player_name">Player Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="race" name="race" value={{ char.race }}>
+                          <label for="race">Race</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="alignment" name="alignment" value={{ char.alignment }}>
+                          <label for="alignment">Alignment</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="exp" name="exp" value={{ char.exp }}>
+                          <label for="exp">Exp Points</label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!--Stats-->
+                    <div class="row">
+                      <div class="col-md-1">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="strength_mod" name="strength_mod" value={{ char.strength_mod }}>
+                          <label for="strength_mod">Str</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="dexterity_mod" name="dexterity_mod" value={{ char.dexterity_mod }}>
+                          <label for="dexterity_mod">Dex</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="constitution_mod" name="constitution_mod" value={{ char.constitution_mod }}>
+                          <label for="constitution_mod">Con</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="intelligence_mod" name="intelligence_mod" value={{ char.intelligence_mod }}>
+                          <label for="intelligence_mod">Int</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="wisdom_mod" name="wisdom_mod" value={{ char.wisdom_mod }}>
+                          <label for="wisdom_mod">Wis</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="charisma_mod" name="charisma_mod" value={{ char.charisma_mod }}>
+                          <label for="charisma_mod">Cha</label>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2">
+                        <div class="input-group mb-3">
+                          <input disabled type="text" class="form-control" name="inspiration" value={{ char.inspiration }}>
+                          <span class="input-group-text">&nbsp;Inspiration</span>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input disabled type="text" class="form-control" name="proficiency_bonus" value={{ char.proficiency_bonus }}> 
+                          <span class="input-group-text"  >&nbsp;Proficiency Bonus</span>
+                        </div>
+
+                        <div class="bg-white p-2">
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="strength_st" value={{ char.strength_st }}> 
+                            <span class="input-group-text"  >&nbsp;Str</span>
+                          </div>                        
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="dexterity_st" value={{ char.dexterity_st }}>
+                            <span class="input-group-text"  >&nbsp;Dex</span>
+                          </div>                        
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="constitution_st" value={{ char.constitution_st }}> 
+                            <span class="input-group-text"  >&nbsp;Con</span>
+                          </div>                        
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="intelligence_st" value={{ char.intelligence_st }}>
+                            <span class="input-group-text"  >&nbsp;Int</span>
+                          </div>                        
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="wisdom_st" value={{ char.wisdom_st }}> 
+                            <span class="input-group-text"  >&nbsp;Wis</span>
+                          </div>                        
+                          <div class="input-group input-group-sm mb-3">
+                            <input disabled type="text" class="form-control" name="charisma_st" value={{ char.charisma_st }}>
+                            <span class="input-group-text"  >&nbsp;Cha</span>
+                          </div>
+                          <p>Saving Throws</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label for="proficienices" class="form-label">Skills</label>
+                          <textarea disabled class="form-control" id="proficienices" rows="5" name="proficienices">{{ char.proficienices }}</textarea>
+                        </div>
+                        
+                      </div>
+
+
+                      <div class="col-md-4">
+                        <div class="row g-3">
+                          <div class="col">
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="armor_class" name="armor_class" value={{ char.armor_class }}>
+                              <label for="armor_class">Armor Class</label>
+                            </div>                          
+                          </div>
+                          <div class="col">
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="initiative" name="initiative" value={{ char.initiative }}>
+                              <label for="initiative">Initiative</label>
+                            </div>    
+                          </div>
+                          <div class="col">
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="speed" name="speed" value={{ char.speed }}>
+                              <label for="speed">Speed</label>
+                            </div>    
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="hit_point_max" name="hit_point_max" value={{ char.hit_point_max }}>
+                          <label for="hit_point_max">Hit Point Max</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="current_hit_points" name="current_hit_points" value={{ char.current_hit_points }}>
+                          <label for="current_hit_points"> Current Hit Points</label>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col">
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="total_hit_dic" name="total_hit_dic" value={{ char.total_hit_dic }}>
+                              <label for="total_hit_dic">Total Hit Dice</label>
+                            </div>  
+
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="hit_dice" name="hit_dice" value={{ char.hit_dice }}>
+                              <label for="hit_dice">Hit Dice</label>
+                            </div>
+                          
+                          </div>
+                          <div class="col">
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="sucess_death_saves" name="sucess_death_saves" value={{ char.sucess_death_saves }}>
+                              <label for="sucess_death_saves">Success Death Saves</label>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                              <input disabled type="text" class="form-control" id="failure_death_saves" name="failure_death_saves" value={{ char.failure_death_saves }}>
+                              <label for="failure_death_saves">Failure Death Saves</label>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="attacks" class="form-label">Attacks </label>
+                          <textarea disabled class="form-control" id="attacks" rows="10" name="attacks">{{ char.attacks }}</textarea>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <label for="personality" class="form-label">Personality</label>
+                          <textarea disabled class="form-control" id="personality" rows="4" name="personality">{{ char.personality }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="ideals" class="form-label">Ideals</label>
+                          <textarea disabled class="form-control" id="ideals" rows="4" name="ideals">{{ char.ideals }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="bonds" class="form-label">Bonds</label>
+                          <textarea disabled class="form-control" id="bonds" rows="4" name="bonds">{{ char.bonds }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="flaws" class="form-label">Flaws</label>
+                          <textarea disabled class="form-control" id="flaws" rows="4" name="flaws">{{ char.flaws }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="input-group input-group-sm mb-3">
+                          <input disabled type="text" class="form-control" name="passive_perception" value={{ char.passive_perception }}> 
+                          <span class="input-group-text"  >&nbsp;Passive perception</span>
+                        </div> 
+                        <div class="mb-3">
+                          <label for="other_proficienices" class="form-label">Other Proficienices</label>
+                          <textarea disabled class="form-control" id="other_proficienices" rows="3" name="other_proficienices">{{ char.other_proficienices }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="row g-3">
+                          <div class="col">
+                            <div class="input-group input-group-sm mb-3">
+                              <input disabled type="text" class="form-control" name="cp" value={{ char.cp }}>
+                              <span class="input-group-text"  >&nbsp;CP</span>
+                            </div>                             
+                          </div>
+                          <div class="col">
+                            <div class="input-group input-group-sm mb-3">
+                              <input disabled type="text" class="form-control" name="sp" value={{ char.sp }}>
+                              <span class="input-group-text"  >&nbsp;SP</span>
+                            </div>       
+                          </div>
+                          <div class="col">
+                            <div class="input-group input-group-sm mb-3">
+                              <input disabled type="text" class="form-control" name="ep" value={{ char.ep }}> 
+                              <span class="input-group-text"  >&nbsp;EP</span>
+                            </div>                             
+                          </div>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col">
+                            <div class="input-group input-group-sm mb-3">
+                              <input disabled type="text" class="form-control" name="gp" value={{ char.gp }}> 
+                              <span class="input-group-text"  >&nbsp;GP</span>
+                            </div>                             
+                          </div>
+                          <div class="col">
+                            <div class="input-group input-group-sm mb-3">
+                              <input disabled type="text" class="form-control" name="pp" value={{ char.pp }}>
+                              <span class="input-group-text"  >&nbsp;PP</span>
+                            </div>       
+                          </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="inventory" class="form-label">Inventory</label>
+                          <textarea disabled class="form-control" id="inventory" rows="3" name="inventory">{{ char.inventory }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <label for="features" class="form-label">Features and Traits</label>
+                          <textarea disabled class="form-control" id="features" rows="10" name="features">{{ char.features }}</textarea>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    
+                    <hr/>
+                    <!--Background-->
+                      
+                    <!--Intro-->
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="floatingInput" value={{ char.name }}>
+                          <label for="floatingInput">Character Name</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="age" name="age" value={{ char.age }}>
+                          <label for="age">Age</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="height" name="height" value={{ char.height }}>
+                          <label for="height">Height</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="weight" name="weight" value={{ char.weight }}>
+                          <label for="weight">Weight</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="eyes" name="eyes" value={{ char.eyes }}>
+                          <label for="eyes">Eyes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="skin" name="skin" value={{ char.skin }}>
+                          <label for="skin">Skin</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="hair" name="hair" value={{ char.hair }}>
+                          <label for="hair">Hair</label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="mb-3">
+                          <label for="race" class="form-label">Race</label>
+                          <textarea disabled class="form-control" id="race" rows="10" name="race">{{ char.race }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="backstory" class="form-label">Backstory</label>
+                          <textarea disabled class="form-control" id="backstory" rows="15" name="backstory">{{ char.backstory }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-7">
+                        <div class="mb-3">
+                          <label for="char_class" class="form-label">Class</label>
+                          <textarea disabled class="form-control" id="char_class" rows="10" name="char_class">{{ char.char_class }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="additional_features" class="form-label">Additional Features</label>
+                          <textarea disabled class="form-control" id="additional_features" rows="10" name="additional_features">{{ char.additional_features }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="treasure" class="form-label" >Treasure</label>
+                          <textarea disabled class="form-control" id="treasure" rows="10" name="treasure">{{ char.treasure }}</textarea>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <hr/>
+
+                    <!--Spells-->
+
+                    <!--Intro-->
+                    <div class="row">
+                      <div class="col-md-5">
+
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="spellcasting_class" name="spellcasting_class" value={{ char.spellcasting_class }}>
+                          <label for="spellcasting_class">Spellcasting Class</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="spellcasting_ability" name="spellcasting_ability" value={{ char.spellcasting_ability }}>
+                          <label for="spellcasting_ability ">Spellcasting Ability </label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="spell_save_dc" name="spell_save_dc" value={{ char.spell_save_dc }}>
+                          <label for="spell_save_dc">Spell Save DC</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating mb-3">
+                          <input disabled type="text" class="form-control" id="spell_attack_bonus" name="spell_attack_bonus" value={{ char.spell_attack_bonus }}>
+                          <label for="spell_attack_bonus">Spell Attack Bonus</label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!--Spells-->
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <label for="level_1_spells" class="form-label">Level 1</label>
+                          <textarea disabled class="form-control" id="level_1_spells" rows="10" name="level_1_spells">{{ char.level_1_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_2_spells" class="form-label">Level 2</label>
+                          <textarea disabled class="form-control" id="level_2_spells" rows="10" name="level_2_spells">{{ char.level_2_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_3_spells" class="form-label">Level 3</label>
+                          <textarea disabled class="form-control" id="level_3_spells" rows="10" name="level_3_spells">{{ char.level_3_spells }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <label for="level_4_spells" class="form-label">Level 4</label>
+                          <textarea disabled class="form-control" id="level_4_spells" rows="10" name="level_4_spells">{{ char.level_4_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_5_spells" class="form-label">Level 5</label>
+                          <textarea disabled class="form-control" id="level_5_spells" rows="10" name="level_5_spells">{{ char.level_5_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_6_spells" class="form-label">Level 6</label>
+                          <textarea disabled class="form-control" id="level_6_spells" rows="10" name="level_6_spells">{{ char.level_6_spells }}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <label for="level_7_spells" class="form-label">Level 7</label>
+                          <textarea disabled class="form-control" id="level_7_spells" rows="10" name="level_7_spells">{{ char.level_7_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_8_spells" class="form-label">Level 8</label>
+                          <textarea disabled class="form-control" id="level_8_spells" rows="10" name="level_8_spells">{{ char.level_8_spells }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="level_9_spells" class="form-label">Level 9</label>
+                          <textarea disabled class="form-control" id="level_9_spells" rows="10" name="level_9_spells">{{ char.level_9_spells }}</textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr/>
+
+                    <div class="row py-3">
+                        <div class="col">
+                            <button type="submit" class="btn btn-dark">UPDATE CHARACTER</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid login-main">
+  <div class="row d-flex justify-content-center py-5">
+    <div class="col-lg-4 col-md-6 py-5">
+      <div class="card">
+        <div class="card-body py-5">
+          <form method='POST'>
+            <div class="mb-3">
+              <label for="password" class="form-label">What's the Secret?</label>
+              <input type="password" class="form-control" id="password" name="pw">
+            </div>
+            <button type="submit" class="btn btn-dark">Let's Go</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
